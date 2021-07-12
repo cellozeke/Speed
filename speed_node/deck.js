@@ -2,22 +2,19 @@ const Card = require("./card");
 
 class Deck {
   constructor() {
-    this.cards = [];
-    this.createDeck();
+    this.cards = this.createDeck();
     this.shuffleDeck();
   };
 
   createDeck() {
-    for (let i = 0; i < Card.SUITS.length; i++) {
-      for (let j = 0; j < Card.VALUES.length; j++) {
-        this.cards.push(new Card(Card.SUITS[i], Card.VALUES[j]));
-      };
-    };
+    return Card.SUITS.flatMap(suit => {
+      return Card.VALUES.map(value => new Card(suit, value));
+    });
   };
 
   shuffleDeck() {
     for (let i = this.cards.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * i);
+      let j = Math.floor(Math.random() * (i + 1));
       [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
     };
   };
@@ -25,5 +22,6 @@ class Deck {
 
 module.exports = Deck;
 
-// let d = new Deck();
-// console.log(d);
+let d = new Deck();
+console.log(d);
+console.log(d.cards.length)

@@ -23,7 +23,14 @@ aside {
   box-sizing: border-box;
   width: 20%;
   height: 100%;
-  padding: 25px;
+  background-color: orange;
+  border: 1px solid black;
+}
+
+.nav {
+  box-sizing: border-box;
+  width: 100%;
+  height: 70%;
   background-color: purple;
   border: 1px solid black;
 }
@@ -38,7 +45,7 @@ div.board {
 
 div.player {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   box-sizing: border-box;
   width: 100%;
   height: 30%;
@@ -48,10 +55,68 @@ div.player {
 
 div.play-area {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   box-sizing: border-box;
   width: 100%;
   height: 40%;
   background-color: yellow;
   border: 1px solid black;
+}
+
+div.hand {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: gray;
+  border: 1px solid black;
+}
+
+div.pile {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30%;
+  background-color: red;
+  border: 1px solid black;
+}
+
+div.card-slot {
+  box-sizing: border-box;
+  height: 175px;
+  width: 125px;
+  margin: auto;
+  background-color: gray;
+  border: 1px solid black;
+}
+
+div.card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10%;
+  font-size: 100px;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: attr(data-value) attr(data-suit);
+  font-size: 40px;
+}
+
+.card::before {
+  top: 10px;
+  left: 10px;
+}
+
+.card::after {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
 }

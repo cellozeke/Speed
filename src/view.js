@@ -1,4 +1,4 @@
-const Game = require("../speed_node/game");
+// const Game = require("../speed_node/game");
 
 class View {
   constructor(game, board) {
@@ -15,3 +15,4 @@ class View {
 };
 
 module.exports = View;
+// export default View;
