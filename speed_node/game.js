@@ -44,9 +44,7 @@ export default class Game {
   };
 
   validMove(card1Value, card2Value) {
-    if (Math.abs(Card.VALUES.indexOf(card1Value) - Card.VALUES.indexOf(card2Value)) === 1) return true;
-    if ((card1Value === 'A' && card2Value === 'K') || (card1Value === 'K' && card2Value === 'A')) return true;
-    return false;
+    return (Math.abs(Card.VALUES.indexOf(card1Value) - Card.VALUES.indexOf(card2Value)) % 11 === 1);
   };
 
   playCard(idx, stackNum) {
@@ -70,9 +68,41 @@ export default class Game {
     return false;
   };
 
-  checkWinner() {
-    if (!this.pile1.length && this.hand1.every(card => card === null)) alert('Player 1 Wins!');
-    if (!this.pile2.length && this.hand2.every(card => card === null)) alert('Player 2 Wins!');
+  AIPlayCard() {
+    const stacks = [this.stack1, this.stack2];
+    for (let i = 0; i < Game.MAX_HAND_SIZE; i++) {
+      let stack = stacks[Math.floor(Math.random() * stacks.length)];
+      let otherStack = stacks.filter(ele => ele !== stack)[0];
+      if (!this.hand2[i]) continue;
+      if (this.validMove(this.hand2[i].value, stack[stack.length - 1].value)) {
+        stack.push(this.hand2[i]);
+        this.hand2[i] = null;
+        return i;
+      };
+      if (this.validMove(this.hand2[i].value, otherStack[otherStack.length - 1].value)) {
+        otherStack.push(this.hand2[i]);
+        this.hand2[i] = null;
+        return i;
+      };
+    };
+    return false;
+  };
+
+  AIDrawCard(idx) {
+    if (!this.pile2.length) return false;
+    this.hand2[idx] = this.pile2.pop();
+    return true;
+  };
+
+  checkWinner(timer) {
+    if (!this.pile1.length && this.hand1.every(card => card === null)){
+      alert('Player 1 Wins!');
+      clearInterval(timer);
+    };
+    if (!this.pile2.length && this.hand2.every(card => card === null)){
+      alert('Player 2 Wins!');
+      clearInterval(timer);
+    };
   };
 };
 

@@ -5,5 +5,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const game = new Game();
   const board = document.querySelector('.board');
   const view = new View(game, board);
-
+  // view.runAI();
 });

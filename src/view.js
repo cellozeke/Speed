@@ -11,6 +11,7 @@ export default class View {
     window.addEventListener('keydown', this.handleKey);
     this.handleClick = this.handleClick.bind(this);
     this.board.addEventListener('click', this.handleClick);
+    this.timer = this.runAI();
   };
 
   setupBoard() {
@@ -73,6 +74,28 @@ export default class View {
     handCardSlot.appendChild(Utils.getCardHTML(this.game.hand1[idx]));
   };
 
+  AIturn() {
+    if (!this.game.stack1.length || !this.game.stack2.length) return;
+    const idx = this.game.AIPlayCard();
+    if (idx !== false) {
+      const handCardSlot = document.querySelectorAll('.hand-2 > .card-slot')[idx];
+      handCardSlot.lastChild.remove();
+      this.renderStacks();
+      if (this.game.AIDrawCard(idx)) {
+        const handCardSlot = document.querySelectorAll('.hand-2 > .card-slot')[idx];
+        handCardSlot.appendChild(Utils.getCardHTML(this.game.hand2[idx]));
+        this.renderPiles();
+      };
+    };
+    this.game.checkWinner(this.timer);
+  };
+
+  runAI() {
+    let that = this;
+    const AIturns = setInterval(this.AIturn.bind(that), 2000);
+    return AIturns;
+  };
+
   handleKey(e) {
     if (Game.KEYS.includes(e.key.toLowerCase())) {
       const idx = Game.KEYS.indexOf(e.key.toLowerCase());
@@ -104,7 +127,6 @@ export default class View {
       this.playFromHand(idx);
       this.renderStacks();
     }; //else flash error
-    this.game.checkWinner();
+    this.game.checkWinner(this.timer);
   };
-
 };
