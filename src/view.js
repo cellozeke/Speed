@@ -11,6 +11,8 @@ export default class View {
     window.addEventListener('keydown', this.handleKey);
     this.handleClick = this.handleClick.bind(this);
     this.board.addEventListener('click', this.handleClick);
+    this.playerWaiting = false;
+    this.AIWaiting = true;
     this.timer = this.runAI();
   };
 
@@ -69,9 +71,23 @@ export default class View {
     handCardSlot.lastChild.remove();
   };
 
-  drawIntoHand(idx) {
-    const handCardSlot = document.querySelectorAll('.hand-1 > .card-slot')[idx];
-    handCardSlot.appendChild(Utils.getCardHTML(this.game.hand1[idx]));
+  drawIntoHand() {
+    let idx = this.game.drawCard();
+    if (idx !== false) {
+      const handCardSlot = document.querySelectorAll('.hand-1 > .card-slot')[idx];
+      handCardSlot.appendChild(Utils.getCardHTML(this.game.hand1[idx]));
+      this.renderPiles();
+    };
+  };
+
+  checkWaiting() {
+    if (this.playerWaiting && this.AIWaiting) {
+      this.game.flipReserves();
+      this.renderReserves();
+      this.renderStacks();
+      this.playerWaiting = false;
+      this.AIWaiting = false;
+    };
   };
 
   AIturn() {
@@ -81,11 +97,14 @@ export default class View {
       const handCardSlot = document.querySelectorAll('.hand-2 > .card-slot')[idx];
       handCardSlot.lastChild.remove();
       this.renderStacks();
+      this.AIWaiting = false;
       if (this.game.AIDrawCard(idx)) {
         const handCardSlot = document.querySelectorAll('.hand-2 > .card-slot')[idx];
         handCardSlot.appendChild(Utils.getCardHTML(this.game.hand2[idx]));
         this.renderPiles();
       };
+    } else {
+      this.AIWaiting = true;
     };
     this.game.checkWinner(this.timer);
   };
@@ -105,15 +124,10 @@ export default class View {
       if (oldSelected && oldSelected !== newSelected) oldSelected.classList.remove('selected');
       newSelected.classList.contains('selected') ? newSelected.classList.remove('selected') : newSelected.classList.add('selected');
     } else if (e.key === ' ') {
-      let idx = this.game.drawCard();
-      if (idx !== false) {
-        this.drawIntoHand(idx);
-        this.renderPiles();
-      };
+      this.drawIntoHand();
     } else if (e.key.toLowerCase() === 'f') {
-      this.game.flipReserves();
-      this.renderReserves();
-      this.renderStacks();
+      this.playerWaiting = !this.playerWaiting;
+      this.checkWaiting();
     };
   };
   
@@ -126,6 +140,7 @@ export default class View {
     if (this.game.playCard(idx, stackNum)) {
       this.playFromHand(idx);
       this.renderStacks();
+      this.playerWaiting = false;
     }; //else flash error
     this.game.checkWinner(this.timer);
   };
