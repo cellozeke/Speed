@@ -1,4 +1,3 @@
-// import Card from '../speed_node/card'
 import Game from '../speed_node/game';
 import Utils from './utils';
 
