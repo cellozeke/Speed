@@ -2,9 +2,10 @@ import Game from '../speed_node/game';
 import Utils from './utils';
 
 export default class View {
-  constructor(game, board) {
+  constructor(game, board, diff) {
     this.game = game;
     this.board = board;
+    this.diff = diff;
     this.setupBoard();
     this.handleKey = this.handleKey.bind(this);
     window.addEventListener('keydown', this.handleKey);
@@ -125,7 +126,7 @@ export default class View {
 
   runAI() {
     let that = this;
-    const AIturns = setInterval(this.AIturn.bind(that), 200);
+    const AIturns = setInterval(this.AIturn.bind(that), View.DIFFICULTY_SPEEDS[this.diff]);
     return AIturns;
   };
 
@@ -161,8 +162,9 @@ export default class View {
     this.endGame(this.game.checkWinner());
   };
 
-  restart() {
+  restart(diff) {
     this.setupBoard();
+    this.diff = diff;
     window.removeEventListener('keydown', this.handleKey);
     window.addEventListener('keydown', this.handleKey);
     this.board.removeEventListener('click', this.handleClick);
@@ -173,3 +175,5 @@ export default class View {
     this.timer = this.runAI();
   };
 };
+
+View.DIFFICULTY_SPEEDS = {'Easy': 4000, 'Medium': 3000, 'Hard': 1000};

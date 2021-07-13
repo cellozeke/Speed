@@ -1,5 +1,5 @@
-import Process from './process';
+import Session from './session';
 
 document.addEventListener("DOMContentLoaded", () => {
-  let process = new Process();
+  let session = new Session();
 });
