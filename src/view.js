@@ -100,7 +100,6 @@ export default class View {
     window.removeEventListener('keydown', this.handleKey);
     this.board.removeEventListener('click', this.handleClick);
     const hoverables = document.querySelectorAll('.hoverable');
-    console.log(hoverables);
     hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
     alert(`Player ${winner} wins!`) ;
   };
@@ -160,5 +159,17 @@ export default class View {
       this.renderStacks();
     }; //else flash error
     this.endGame(this.game.checkWinner());
+  };
+
+  restart() {
+    this.setupBoard();
+    window.removeEventListener('keydown', this.handleKey);
+    window.addEventListener('keydown', this.handleKey);
+    this.board.removeEventListener('click', this.handleClick);
+    this.board.addEventListener('click', this.handleClick);
+    this.playerWaiting = false;
+    this.AIWaiting = true;
+    clearInterval(this.timer);
+    this.timer = this.runAI();
   };
 };

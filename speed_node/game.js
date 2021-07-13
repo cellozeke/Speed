@@ -99,6 +99,18 @@ export default class Game {
     if (!this.pile2.length && this.hand2.every(card => card === null)) return 2;
     return false;
   };
+
+  restart() {
+    this.hand1 = [];
+    this.hand2 = [];
+    this.pile1 = [];
+    this.pile2 = [];
+    this.reserve1 = [];
+    this.reserve2 = [];
+    this.stack1 = [];
+    this.stack2 = [];
+    this.dealCards();
+  };
 };
 
 Game.MAX_HAND_SIZE = 5;
