@@ -53,10 +53,15 @@ export default class View {
   renderStacks() {
     const stack1Slot = document.querySelector('.stack-1-slot');
     if (stack1Slot.hasChildNodes()) stack1Slot.removeChild(stack1Slot.childNodes[0]);
-    stack1Slot.appendChild(Utils.getCardHTML(this.game.stack1[this.game.stack1.length - 1]));
+    const stack1Card = Utils.getCardHTML(this.game.stack1[this.game.stack1.length - 1]);
+    stack1Card.classList.add('hoverable');
+    stack1Slot.appendChild(stack1Card);
+
     const stack2Slot = document.querySelector('.stack-2-slot');
     if (stack2Slot.hasChildNodes()) stack2Slot.removeChild(stack2Slot.childNodes[0]);
-    stack2Slot.appendChild(Utils.getCardHTML(this.game.stack2[this.game.stack2.length - 1]));
+    const stack2Card = Utils.getCardHTML(this.game.stack2[this.game.stack2.length - 1]);
+    stack2Card.classList.add('hoverable');
+    stack2Slot.appendChild(stack2Card);
   };
 
   renderPiles() {
@@ -90,6 +95,17 @@ export default class View {
     };
   };
 
+  endGame(winner) {
+    if (winner === false) return;
+    clearInterval(this.timer);
+    window.removeEventListener('keydown', this.handleKey);
+    this.board.removeEventListener('click', this.handleClick);
+    const hoverables = document.querySelectorAll('.hoverable');
+    console.log(hoverables);
+    hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
+    alert(`Player ${winner} wins!`) ;
+  };
+
   AIturn() {
     if (!this.game.stack1.length || !this.game.stack2.length) return;
     const idx = this.game.AIPlayCard();
@@ -106,17 +122,18 @@ export default class View {
     } else {
       this.AIWaiting = true;
     };
-    this.game.checkWinner(this.timer);
+    this.endGame(this.game.checkWinner());
   };
 
   runAI() {
     let that = this;
-    const AIturns = setInterval(this.AIturn.bind(that), 2000);
+    const AIturns = setInterval(this.AIturn.bind(that), 200);
     return AIturns;
   };
 
   handleKey(e) {
     if (Game.KEYS.includes(e.key.toLowerCase())) {
+      this.playerWaiting = false;
       const idx = Game.KEYS.indexOf(e.key.toLowerCase());
       const oldSelected = document.querySelector('.selected');
       const newSelected = document.querySelectorAll('.hand-1 .card-slot')[idx].firstChild;
@@ -124,9 +141,10 @@ export default class View {
       if (oldSelected && oldSelected !== newSelected) oldSelected.classList.remove('selected');
       newSelected.classList.contains('selected') ? newSelected.classList.remove('selected') : newSelected.classList.add('selected');
     } else if (e.key === ' ') {
+      this.playerWaiting = false;
       this.drawIntoHand();
     } else if (e.key.toLowerCase() === 'f') {
-      this.playerWaiting = !this.playerWaiting;
+      this.playerWaiting = true;
       this.checkWaiting();
     };
   };
@@ -134,14 +152,14 @@ export default class View {
   handleClick(e) {
     const selectedCard = document.querySelector('.selected');
     if (!selectedCard || !e.path[1].classList.contains('stack-slot')) return;
+    this.playerWaiting = false;
     const handCard = this.game.hand1.find(card => card && card.suit === selectedCard.dataset['suit'] && card.value === selectedCard.dataset['value']);
     const idx = this.game.hand1.indexOf(handCard);
     const stackNum = e.path[1].classList.contains('stack-1-slot') ? 1 : 2;
     if (this.game.playCard(idx, stackNum)) {
       this.playFromHand(idx);
       this.renderStacks();
-      this.playerWaiting = false;
     }; //else flash error
-    this.game.checkWinner(this.timer);
+    this.endGame(this.game.checkWinner());
   };
 };

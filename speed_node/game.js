@@ -94,15 +94,14 @@ export default class Game {
     return true;
   };
 
-  checkWinner(timer) {
-    if (!this.pile1.length && this.hand1.every(card => card === null)){
-      alert('Player 1 Wins!');
-      clearInterval(timer);
-    };
-    if (!this.pile2.length && this.hand2.every(card => card === null)){
-      alert('Player 2 Wins!');
-      clearInterval(timer);
-    };
+  checkWinner() {
+    if (!this.pile1.length && this.hand1.every(card => card === null)) return 1;
+      // alert('Player 1 Wins!');
+      // clearInterval(timer);
+    if (!this.pile2.length && this.hand2.every(card => card === null)) return 2;
+      // alert('Player 2 Wins!');
+      // clearInterval(timer);
+    return false;
   };
 };
 

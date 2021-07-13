@@ -126,7 +126,7 @@ aside {
   box-shadow: 0px 0px 30px #36e600;
 }
 
-.stack-slot > .card:hover {
+.hoverable:hover {
   outline: none;
   box-shadow: 0px 0px 30px #36e600;
   cursor: pointer;
