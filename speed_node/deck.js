@@ -1,6 +1,6 @@
-const Card = require("./card");
+import Card from './card';
 
-class Deck {
+export default class Deck {
   constructor() {
     this.cards = this.createDeck();
     this.shuffleDeck();
@@ -19,9 +19,3 @@ class Deck {
     };
   };
 };
-
-module.exports = Deck;
-
-let d = new Deck();
-console.log(d);
-console.log(d.cards.length)

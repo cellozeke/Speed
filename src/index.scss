@@ -1,28 +1,25 @@
 html {
+  display: flex;
   box-sizing: border-box;
   height: 100%;
-  margin: 0;
-  padding: 0;
+  background-color: black;
 }
 
 body {
   display: flex;
   box-sizing: border-box;
-  width: 100%;
+  width: 75%;
   height: 100%;
-  margin: 0;
-  padding: 0;
+  margin: auto;
   background-color: aqua;
-  border: 1px solid black;
+  font-family: cursive;
 }
 
 aside {
   box-sizing: border-box;
   width: 20%;
   height: 100%;
-  // padding: 25px;
   background-color: orange;
-  border: 1px solid black;
 }
 
 .nav {
@@ -30,64 +27,53 @@ aside {
   width: 100%;
   height: 70%;
   background-color: purple;
-  border: 1px solid black;
 }
 
-div.board {
+.board {
   box-sizing: border-box;
   width: 80%;
   height: 100%;
   background-color: orange;
-  border: 1px solid black;
+  user-select: none;
 }
 
-div.player {
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-  width: 100%;
-  height: 30%;
-  background-color: gray;
-  border: 1px solid black;
-}
-
-div.play-area {
+.play-area {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   box-sizing: border-box;
   width: 100%;
   height: 40%;
   background-color: yellow;
-  border: 1px solid black;
 }
 
-div.hand {
+.hand {
   display: flex;
   justify-content: space-evenly;
   box-sizing: border-box;
   width: 100%;
+  height: 30%;
   background-color: gray;
-  border: 1px solid black;
 }
 
-div.pile {
+.pile-area {
+  display: flex;
   box-sizing: border-box;
   width: 100%;
   height: 30%;
   background-color: red;
-  border: 1px solid black;
+  user-select: none;
 }
 
-div.card-slot {
+.slot {
   box-sizing: border-box;
   height: 175px;
   width: 125px;
   margin: auto;
-  background-color: gray;
-  border: 1px solid black;
+  // background-color: gray;
 }
 
-div.card {
+.card, .stack, .pile, .reserve {
   position: relative;
   display: flex;
   justify-content: center;
@@ -98,7 +84,11 @@ div.card {
   background-color: white;
   border: 1px solid black;
   border-radius: 10%;
-  font-size: 100px;
+  font-size: 80px;
+}
+
+.pile, .reserve {
+  background-color: pink;
 }
 
 .card::before,
@@ -117,4 +107,25 @@ div.card {
   bottom: 10px;
   right: 10px;
   transform: rotate(180deg);
+}
+
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
+.selected {
+  outline: none;
+  position: relative;
+  bottom: 10px;
+  box-shadow: 0px 0px 30px #36e600;
+}
+
+.stack-slot > .card:hover {
+  outline: none;
+  box-shadow: 0px 0px 30px #36e600;
+  cursor: pointer;
 }
