@@ -21,8 +21,11 @@ export default class Session {
 
   handleClick(e) {
     if (e.target.classList.contains('new-game')) {
-      const diff = Array.prototype.slice.call(document.querySelectorAll('input[type="radio"]')).find(ele => ele.checked).id;
+      const diff = e.target.innerHTML
       this.restart(diff);
     };
+    // let blah = document.querySelectorAll('head > link')[1];
+    // console.log(blah);
+    // blah.remove();
   };
 };
