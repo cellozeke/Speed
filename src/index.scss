@@ -8,7 +8,7 @@ html {
 body {
   display: flex;
   box-sizing: border-box;
-  width: 75%;
+  width: 80%;
   height: 100%;
   margin: auto;
   font-family: 'Merienda', cursive;
@@ -20,26 +20,35 @@ body {
 }
 
 aside {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   width: 20%;
   height: 100%;
+  border: 1px solid lime;
+  box-shadow: 0 0 20px lime;
 }
 
 .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   box-sizing: border-box;
   width: 100%;
   height: 70%;
   color: lime;
+  mix-blend-mode: difference;
+  padding: 10px;
   font-size: 24px;
-  // -webkit-text-stroke-width: 1px;
-  // -webkit-text-stroke-color: white;
-  text-shadow: 1px 1px 5px darkorange;
-  
+  text-shadow: 0 0 5px darkorange;
+  border: 1px solid lime;
+  box-shadow: 0 0 20px lime;
 }
 
 .board {
   box-sizing: border-box;
-  width: 80%;
+  width: 75%;
   height: 100%;
   user-select: none;
 }
@@ -51,6 +60,8 @@ aside {
   box-sizing: border-box;
   width: 100%;
   height: 40%;
+  border: 1px solid lime;
+  box-shadow: 0 0 20px lime;
 }
 
 .hand {
@@ -61,8 +72,7 @@ aside {
   height: 30%;
   text-shadow: 1px 1px gray;
   border: 1px solid lime;
-  border-radius: 1.5%;
-  box-shadow: 0 0 30px lime;
+  box-shadow: 0 0 20px lime;
 }
 
 .pile-area {
@@ -71,6 +81,8 @@ aside {
   width: 100%;
   height: 30%;
   user-select: none;
+  border: 1px solid lime;
+  box-shadow: 0 0 20px lime;
 }
 
 .slot {
@@ -97,7 +109,6 @@ aside {
 
 .pile, .reserve {
   font-family: 'Merienda', cursive;
-  // font-family:;
   color: lime;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
@@ -109,7 +120,7 @@ aside {
   background-position: center;
   background-size: 200%;
   background-repeat: no-repeat;
-  box-shadow: 0 0 30px lime;
+  box-shadow: 0 0 20px lime;
 }
 
 .card::before,
@@ -163,3 +174,81 @@ aside {
   box-shadow: 0px 0px 50px cyan;
   cursor: pointer;
 }
+
+button {
+  background-color: black;
+  border: 1px solid lime;
+  border-radius: 5%;
+  color: lime;
+  font-family: 'Merienda', cursive;
+  font-size: 26px;
+  text-shadow: 1px 1px 5px darkorange;
+  box-shadow: 0 0 20px lime;
+  cursor: pointer;
+}
+
+button:hover{
+  box-shadow: 0 0 20px cyan;
+}
+
+.new-game-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.new-game-options > div {
+  margin: 5px;
+}
+
+.new-game-options > div:hover {
+  text-shadow: 0 0 30px cyan;
+}
+
+h1 {
+  position: relative;
+  top: 15px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h2 {
+}
+
+// input[type=radio] {
+//   position: fixed;
+//   opacity: 0;
+//   pointer-events: none;
+// }
+
+// input[type=radio]:checked {
+//   text-shadow: 0 0 50px lime;
+// }
+
+// input[type='radio']:after {
+//   width: 15px;
+//   height: 15px;
+//   border-radius: 15px;
+//   top: -2px;
+//   left: -1px;
+//   position: relative;
+//   background-color: #d1d3d1;
+//   content: '';
+//   display: inline-block;
+//   visibility: visible;
+//   border: 2px solid white;
+// }
+
+// input[type='radio']:checked:after {
+//   width: 15px;
+//   height: 15px;
+//   border-radius: 15px;
+//   top: -2px;
+//   left: -1px;
+//   position: relative;
+//   background-color: #ffa500;
+//   content: '';
+//   display: inline-block;
+//   visibility: visible;
+//   border: 2px solid white;
+// }
