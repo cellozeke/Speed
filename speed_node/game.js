@@ -76,15 +76,15 @@ export default class Game {
       if (this.validMove(this.hand2[i].value, stack[stack.length - 1].value)) {
         stack.push(this.hand2[i]);
         this.hand2[i] = null;
-        return i;
+        return [i, stack];
       };
       if (this.validMove(this.hand2[i].value, otherStack[otherStack.length - 1].value)) {
         otherStack.push(this.hand2[i]);
         this.hand2[i] = null;
-        return i;
+        return [i, otherStack];
       };
     };
-    return false;
+    return [false, null];
   };
 
   AIDrawCard(idx) {

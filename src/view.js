@@ -48,10 +48,21 @@ export default class View {
   //   return [Utils.getPosition(document.querySelector('.stack-1-slot')), Utils.getPosition(document.querySelector('.stack-2-slot'))];
   // };
 
-  getTranslation(ele1, ele2) {
+  translateCard(ele1, ele2) {
     const first = Utils.getPosition(ele1);
     const second = Utils.getPosition(ele2);
-    return [second[0] - first[0], second[1] - first[1]];
+    const x = second[0] - first[0];
+    const y = second[1] - first[1];
+    ele1.animate([
+      { transform: `translate(${x}px, ${y}px)`}
+      // { transform: `translate(${translation[0]}px, ${translation[1]}px) rotate(360deg)`}
+    ], {
+      duration: View.CARD_ANIMATION_LENGTH,
+      fill: 'forwards',
+      iterations: 1
+    });
+    setTimeout(() => ele1.remove(), View.CARD_ANIMATION_LENGTH);
+    setTimeout(() => this.renderStacks(), View.CARD_ANIMATION_LENGTH);
   };
 
   renderReserves() {
@@ -85,17 +96,7 @@ export default class View {
   playFromHand(selectedCard, stack) {
     const selectedStack = document.querySelector(stack === this.game.stack1 ? '.stack-1-slot' : '.stack-2-slot');
     selectedCard.classList.remove('selected');
-    const translation = this.getTranslation(selectedCard, selectedStack);
-    console.log(translation);
-    selectedCard.animate([
-      { transform: `translate(${translation[0]}px, ${translation[1]}px)`}
-      // { transform: `translate(${translation[0]}px, ${translation[1]}px) rotate(360deg)`}
-    ], {
-      duration: View.CARD_ANIMATION_LENGTH,
-      fill: 'forwards',
-      iterations: 1
-    });
-    setTimeout(() => selectedCard.remove(), View.CARD_ANIMATION_LENGTH)
+    this.translateCard(selectedCard, selectedStack);
   };
 
   drawIntoHand() {
@@ -129,15 +130,17 @@ export default class View {
 
   AIturn() {
     if (!this.game.stack1.length || !this.game.stack2.length) return;
-    const idx = this.game.AIPlayCard();
+    const attempt = this.game.AIPlayCard();
+    const idx = attempt[0];
+    const stack = attempt[1];
     if (idx !== false) {
-      const handCardSlot = document.querySelectorAll('.hand-2 > .card-slot')[idx];
-      handCardSlot.lastChild.remove();
-      this.renderStacks();
+      const selectedCard = document.querySelectorAll('.hand-2 > .card-slot')[idx].lastChild;
+      const selectedStack = document.querySelector(stack === this.game.stack1 ? '.stack-1-slot' : '.stack-2-slot');
+      this.translateCard(selectedCard, selectedStack);
       this.AIWaiting = false;
       if (this.game.AIDrawCard(idx)) {
         const handCardSlot = document.querySelectorAll('.hand-2 > .card-slot')[idx];
-        handCardSlot.appendChild(Utils.getCardHTML(this.game.hand2[idx]));
+        handCardSlot.prepend(Utils.getCardHTML(this.game.hand2[idx]));
         this.renderPiles();
       };
     } else {
@@ -177,10 +180,7 @@ export default class View {
     const handCard = this.game.hand1.find(card => card && card.suit === selectedCard.dataset['suit'] && card.value === selectedCard.dataset['value']);
     const idx = this.game.hand1.indexOf(handCard);
     const stack = e.path[1].classList.contains('stack-1-slot') ? this.game.stack1 : this.game.stack2;
-    if (this.game.playCard(idx, stack)) {
-      this.playFromHand(selectedCard, stack);
-      setTimeout(() => this.renderStacks(), View.CARD_ANIMATION_LENGTH);
-    }; //else flash error
+    if (this.game.playCard(idx, stack)) this.playFromHand(selectedCard, stack); //else flash error
     this.endGame(this.game.checkWinner());
   };
 

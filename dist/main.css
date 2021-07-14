@@ -147,6 +147,7 @@ aside {
 .hand-2 .card {
   border-color: red;
   box-shadow: 0 0 10px red;
+  z-index: 1;
 }
 
 .stack-slot > .card {
