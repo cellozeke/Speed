@@ -13,7 +13,7 @@ body {
   margin: auto;
   font-family: 'Merienda', cursive;
   box-shadow: 0px 0px 30px lime;
-  background-image: url('fire.jpg');
+  background-image: url('lightning_bg.jpg');
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,7 +26,7 @@ aside {
   width: 20%;
   height: 100%;
   border: 1px solid lime;
-  box-shadow: 0 0 20px lime;
+  box-shadow: 0 0 20px cyan;
 }
 
 .nav {
@@ -37,13 +37,13 @@ aside {
   box-sizing: border-box;
   width: 100%;
   height: 70%;
-  color: lime;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
+  color: yellow;
   padding: 10px;
   font-size: 24px;
-  text-shadow: 0 0 5px darkorange;
+  text-shadow: 0 0 5px black;
   border: 1px solid lime;
-  box-shadow: 0 0 20px lime;
+  box-shadow: 0 0 20px cyan;
 }
 
 .board {
@@ -61,7 +61,7 @@ aside {
   width: 100%;
   height: 40%;
   border: 1px solid lime;
-  box-shadow: 0 0 20px lime;
+  box-shadow: 0 0 20px orange;
 }
 
 .hand {
@@ -72,7 +72,7 @@ aside {
   height: 30%;
   text-shadow: 1px 1px gray;
   border: 1px solid lime;
-  box-shadow: 0 0 20px lime;
+  box-shadow: 0 0 20px yellow;
 }
 
 .pile-area {
@@ -82,7 +82,7 @@ aside {
   height: 30%;
   user-select: none;
   border: 1px solid lime;
-  box-shadow: 0 0 20px lime;
+  box-shadow: 0 0 20px purple;
 }
 
 .slot {
@@ -107,20 +107,34 @@ aside {
   font-size: 80px;
 }
 
+.pile, .reserve, .hand-2 .card {
+  background-image: url('./lightning.jpg');
+  background-position-x: -220px;
+  background-position-y: -10px;
+  background-size: 300%;
+  background-repeat: no-repeat;
+}
+
 .pile, .reserve {
   font-family: 'Merienda', cursive;
   color: lime;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   text-shadow: 0 0 10px lime;
-  border-color: lime;
+  border-color: orange;
   border-right-width: 5px;
   border-bottom-width: 5px;
-  background-image: url('./flame.jpg');
-  background-position: center;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  box-shadow: 0 0 20px lime;
+  box-shadow: 0 0 20px orange;
+}
+
+.hand-1 .card {
+  border-color: lime;
+  box-shadow: 0 0 10px lime;
+}
+
+.hand-2 .card {
+  border-color: red;
+  box-shadow: 0 0 10px red;
 }
 
 .card::before,
@@ -141,14 +155,7 @@ aside {
   transform: rotate(180deg);
 }
 
-.hand-2 .card {
-  background-image: url('./flame.jpg');
-  background-position: center;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  font-size: 0;
-}
-
+.hand-2 .card,
 .hand-2 .card::before,
 .hand-2 .card::after {
   font-size: 0;
@@ -162,7 +169,7 @@ aside {
   color: black;
 }
 
-.selected {
+.hand-1 div.selected {
   outline: none;
   position: relative;
   bottom: 15px;
@@ -176,14 +183,14 @@ aside {
 }
 
 button {
-  background-color: black;
-  border: 1px solid lime;
+  background-color: transparent;
+  border: 1px solid yellow;
   border-radius: 5%;
-  color: lime;
+  color: yellow;
   font-family: 'Merienda', cursive;
   font-size: 26px;
-  text-shadow: 1px 1px 5px darkorange;
-  box-shadow: 0 0 20px lime;
+  text-shadow: 1px 1px 5px yellow;
+  box-shadow: 0 0 20px yellow;
   cursor: pointer;
 }
 
@@ -202,7 +209,7 @@ button:hover{
 }
 
 .new-game-options > div:hover {
-  text-shadow: 0 0 30px cyan;
+  text-shadow: 0 0 10px cyan;
 }
 
 h1 {
