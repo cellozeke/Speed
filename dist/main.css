@@ -7,6 +7,7 @@ html {
   height: 100%;
   background-color: black;
   cursor: url("./cursor.png"), auto;
+  user-select: none;
 }
 
 body {
@@ -53,7 +54,6 @@ aside {
   box-sizing: border-box;
   width: 75%;
   height: 100%;
-  user-select: none;
 }
 
 .play-area {
@@ -145,6 +145,10 @@ aside {
   box-shadow: 0 0 10px orange;
 }
 
+.card-slot {
+  display: flex;
+}
+
 .card::before,
 .card::after {
   position: absolute;
@@ -197,7 +201,7 @@ button {
   font-family: "Merienda", cursive;
   font-size: 26px;
   margin: 5px;
-  text-shadow: 1px 1px 10px black;
+  text-shadow: 0 0 10px black;
   cursor: url("./cursor.png"), auto;
   transition: color 0.2s linear;
 }
@@ -219,7 +223,6 @@ h1 {
   top: 15px;
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 0 0 10px black;
 }
 
 h2 {

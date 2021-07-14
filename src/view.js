@@ -73,14 +73,26 @@ export default class View {
 
   playFromHand(idx) {
     const handCardSlot = document.querySelectorAll('.hand-1 > .card-slot')[idx];
-    handCardSlot.lastChild.remove();
+    const lastCard = handCardSlot.lastChild
+    console.log(lastCard);
+    lastCard.classList.remove('selected');
+    lastCard.animate([
+      { transform: 'translateY(-15px)' },
+      { transform: 'translateY(-300px)' }
+    ], {
+      duration: 1000,
+      fill: 'forwards',
+      iterations: 1
+    });
+    setTimeout(() => lastCard.remove(), 1000)
   };
 
   drawIntoHand() {
     let idx = this.game.drawCard();
     if (idx !== false) {
       const handCardSlot = document.querySelectorAll('.hand-1 > .card-slot')[idx];
-      handCardSlot.appendChild(Utils.getCardHTML(this.game.hand1[idx]));
+      handCardSlot.prepend(Utils.getCardHTML(this.game.hand1[idx]));
+      // handCardSlot.appendChild(Utils.getCardHTML(this.game.hand1[idx]));
       this.renderPiles();
     };
   };
@@ -174,12 +186,6 @@ export default class View {
     clearInterval(this.timer);
     this.timer = this.runAI();
   };
-
-  // @keyframes example {
-  //   0%  {color: 'magenta'}
-  //   50% {color: 'lime'}
-  //   10% {color: 'cyan'}
-  // }
 };
 
 View.DIFFICULTY_SPEEDS = {'Easy': 4000, 'Medium': 3000, 'Hard': 1000};
