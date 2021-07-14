@@ -22,6 +22,10 @@ const Utils = {
     reserveDiv.classList.add('reserve');
     reserveDiv.dataset.size = `${reserve.length}`;
     return reserveDiv;
+  },
+
+  getPosition(element) {
+    return [window.scrollY + element.getBoundingClientRect().left, window.scrollY + element.getBoundingClientRect().top];
   }
 };
 

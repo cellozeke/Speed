@@ -47,8 +47,7 @@ export default class Game {
     return (Math.abs(Card.VALUES.indexOf(card1Value) - Card.VALUES.indexOf(card2Value)) % 11 === 1);
   };
 
-  playCard(idx, stackNum) {
-    const stack = (stackNum === 1 ? this.stack1 : this.stack2);
+  playCard(idx, stack) {
     if (this.validMove(this.hand1[idx].value, stack[stack.length - 1].value)) {
       stack.push(this.hand1[idx]);
       this.hand1[idx] = null;

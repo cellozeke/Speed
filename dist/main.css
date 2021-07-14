@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   box-sizing: border-box;
   width: 80%;
@@ -25,6 +26,7 @@ body {
 }
 
 aside {
+  position: relative;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -35,6 +37,7 @@ aside {
 }
 
 .nav {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,12 +54,14 @@ aside {
 }
 
 .board {
+  position: relative;
   box-sizing: border-box;
   width: 75%;
   height: 100%;
 }
 
 .play-area {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -68,6 +73,7 @@ aside {
 }
 
 .hand {
+  position: relative;
   display: flex;
   justify-content: space-evenly;
   box-sizing: border-box;
@@ -79,6 +85,7 @@ aside {
 }
 
 .pile-area {
+  position: relative;
   display: flex;
   box-sizing: border-box;
   width: 100%;
@@ -89,10 +96,12 @@ aside {
 }
 
 .slot {
+  position: relative;
   box-sizing: border-box;
   height: 175px;
   width: 125px;
   margin: auto;
+  display: flex;
 }
 
 .card, .stack, .pile, .reserve {
@@ -145,8 +154,8 @@ aside {
   box-shadow: 0 0 10px orange;
 }
 
-.card-slot {
-  display: flex;
+.card-slot > div.card {
+  position: absolute;
 }
 
 .card::before,

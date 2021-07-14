@@ -1,5 +1,6 @@
-import Game from '../speed_node/game'
-import View from './view'
+import Game from '../speed_node/game';
+import View from './view';
+import Utils from './utils';
 
 export default class Session {
   constructor() {
