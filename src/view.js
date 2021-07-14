@@ -174,6 +174,12 @@ export default class View {
     clearInterval(this.timer);
     this.timer = this.runAI();
   };
+
+  // @keyframes example {
+  //   0%  {color: 'magenta'}
+  //   50% {color: 'lime'}
+  //   10% {color: 'cyan'}
+  // }
 };
 
 View.DIFFICULTY_SPEEDS = {'Easy': 4000, 'Medium': 3000, 'Hard': 1000};

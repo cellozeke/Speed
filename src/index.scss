@@ -3,7 +3,7 @@ html {
   box-sizing: border-box;
   height: 100%;
   background-color: black;
-  cursor: url("./cursor5.png"), auto;
+  cursor: url("./cursor.png"), auto;
 }
 
 body {
@@ -42,7 +42,7 @@ aside {
   color: yellow;
   padding: 10px;
   font-size: 24px;
-  text-shadow: 0 0 5px black;
+  text-shadow: 0 0 10px black;
   border: 1px solid lime;
   box-shadow: 0 0 20px cyan;
 }
@@ -194,12 +194,15 @@ button {
   color: yellow;
   font-family: 'Merienda', cursive;
   font-size: 26px;
-  text-shadow: 1px 1px 5px yellow;
-  cursor: url("./cursor5.png"), auto;
+  margin: 5px;
+  text-shadow: 1px 1px 10px black;
+  cursor: url("./cursor.png"), auto;
+  transition: color 0.2s linear;
 }
 
 button:hover{
-  text-shadow: 0 0 20px cyan;
+  color: orange;
+  text-shadow: 0 0 10px cyan;
   text-decoration: dotted underline;
 }
 
@@ -209,23 +212,17 @@ button:hover{
   justify-content: center;
 }
 
-.new-game-options > div {
-  margin: 5px;
-}
-
-.new-game-options > div:hover {
-  text-shadow: 0 0 10px cyan;
-}
-
 h1 {
   position: relative;
   top: 15px;
   font-size: 50px;
   font-weight: bold;
+  text-shadow: 0 0 10px black;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 32px;
+  text-shadow: 0 0 10px black;
   text-decoration: underline;
 }
 
