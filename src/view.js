@@ -120,8 +120,11 @@ export default class View {
     window.removeEventListener('keydown', this.handleKey);
     this.board.removeEventListener('click', this.handleClick);
     const hoverables = document.querySelectorAll('.hoverable');
+    console.log(hoverables);
     hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
-    setTimeout(() => this.endMessage(winner), View.CARD_ANIMATION_LENGTH);
+    console.log(hoverables);
+    // setTimeout(() => this.endMessage(winner), View.CARD_ANIMATION_LENGTH);
+    this.endMessage(winner);
   };
 
   endMessage(winner) {
@@ -129,7 +132,6 @@ export default class View {
     const msg = document.createElement('div');
     msg.classList.add('msg');
     msg.innerHTML = (winner === 1 ? 'You win!' : 'AI wins!');
-    console.log(msg);
     body.appendChild(msg);
     msg.animate([
       { textShadow: '0 0 10px lime', boxShadow: '0 0 50px orange' },
