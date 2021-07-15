@@ -31,4 +31,18 @@ document.addEventListener("DOMContentLoaded", () => {
       music.stop();
     };
   };
+
+  window.addEventListener('click', chooseTheme);
+
+  function chooseTheme(e) {
+    if (e.target.classList.contains('theme')) {
+      const oldCss = document.querySelectorAll('head > link')[1];
+      oldCss.remove();
+      const head = document.querySelector('head');
+      const newCss = document.createElement('link');
+      newCss.setAttribute('rel', 'stylesheet');
+      newCss.setAttribute('href', e.target.innerHTML === 'Lightning' ? './dist/main.css' : './dist/fire.css');
+      head.appendChild(newCss);
+    };
+  };
 });

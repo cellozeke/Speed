@@ -25,8 +25,5 @@ export default class Session {
       const diff = e.target.innerHTML
       this.restart(diff);
     };
-    // let blah = document.querySelectorAll('head > link')[1];
-    // console.log(blah);
-    // blah.remove();
   };
 };

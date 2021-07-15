@@ -193,6 +193,20 @@ aside {
   box-shadow: 0px 0px 50px cyan;
 }
 
+.new-game-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+}
+
+.theme-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: center;
+}
+
 button {
   background-color: transparent;
   border: transparent;
@@ -205,17 +219,10 @@ button {
   transition: color 0.1s linear;
 }
 
-button.new-game:hover, button.instructions:hover {
+button.new-game:hover, button.instructions:hover, button.theme:hover {
   color: lime;
   text-shadow: 0 0 10px cyan;
   text-decoration: dotted underline;
-}
-
-.new-game-options {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
-  justify-content: center;
 }
 
 h1 {
@@ -229,6 +236,13 @@ h1 {
 
 h2 {
   font-size: 32px;
+  margin: 10px 0px;
+  text-shadow: 0 0 10px black;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 30px;
   margin: 10px 0px;
   text-shadow: 0 0 10px black;
   text-decoration: underline;
@@ -292,7 +306,7 @@ button.music:hover {
   font-weight: bold;
   text-align: center;
   color: purple;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid white;
 }
 
