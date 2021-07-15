@@ -1,4 +1,5 @@
 import Session from './session';
+import Sound from './sound';
 
 document.addEventListener("DOMContentLoaded", () => {
   let session = new Session();
@@ -13,4 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 2000,
     iterations: Infinity
   });
+
+  const sound = new Sound('./dist/flight_of_the_bumblebee_2.mp3');
+  window.addEventListener('keydown', () => sound.play());
+  // sound.play();
 });

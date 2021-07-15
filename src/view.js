@@ -123,8 +123,7 @@ export default class View {
     console.log(hoverables);
     hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
     console.log(hoverables);
-    // setTimeout(() => this.endMessage(winner), View.CARD_ANIMATION_LENGTH);
-    this.endMessage(winner);
+    setTimeout(() => this.endMessage(winner), View.CARD_ANIMATION_LENGTH);
   };
 
   endMessage(winner) {
