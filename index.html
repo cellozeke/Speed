@@ -11,18 +11,64 @@
       @import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
       </style>
     <script src="./dist/main.js"></script>
+    <script>
+      function showInstructions() {
+        document.querySelector('.popup').style.visibility = 'visible';
+      }
+      function hideInstructions() {
+        document.querySelector('.popup').style.visibility = 'hidden';
+      }
+    </script>
     <title>Speed</title>
   </head>
 
   <body>
+    <div class="popup">
+      <div>
+        <div>
+          <img src="./dist/q.png" alt="">
+          <img src="./dist/w.png" alt="">
+          <img src="./dist/e.png" alt="">
+          <img src="./dist/r.png" alt="">
+          <img src="./dist/t.png" alt="">
+        </div>
+        <p>Select/deselect corresponding card in hand</p>
+      </div>
+      <div>
+        <img src="./dist/leftclick.png" alt="">
+        <p>Play selected card onto clicked stack, if valid</p>
+      </div>
+      <div>
+        <img src="./dist/f.png" alt="">
+        <p>Flip new cards onto stacks, if AI is also ready</p>
+      </div>
+      <div>
+        <img src="./dist/spacebar.png" alt="">
+        <p>Draw card from pile into hand</p>
+      </div>
+      <div>
+        <p>AI Action Intervals: Easy (3 sec), Medium (2 sec), Hard (1 sec)</p>
+      </div>
+      <div>
+        <p>Play cards that are consecutive in value to the top card of either stack in the middle. Values wrap around (K -> A -> 2)</p>
+      </div>
+      <div>
+        <p>The first player to empty both their hand and pile wins!</p>
+      </div>
+    </div>
     <aside>
       <div class="pile-2-area pile-area">
         <div class="pile-2-slot pile-slot slot"></div>
       </div>
       <div class="nav-1 nav">
         <h1>Speed</h1>
-        <h2>Instructions</h2>
-        <h2>Zeke Yu</h2>
+        <div class="new-game-options">
+          <h2>New Game</h2>
+          <button class="new-game">Easy</button>
+          <button class="new-game">Medium</button>
+          <button class="new-game">Hard</button>
+          <br>
+        </div>
         <ul>
           <a href="https://github.com/cellozeke/Speed" target="_blank" rel="noopener noreferrer"><img class="github" src="./dist/GitHub-Mark-Light-64px.png" alt=""></a>
           <a href="https://www.linkedin.com/in/ezekiel-yu/" target="_blank" rel="noopener noreferrer"><img class="linkedin" src="./dist/LI-In-Bug.png" alt=""></a>
@@ -55,12 +101,8 @@
 
     <aside>
       <div class="nav-2 nav">
-        <div class="new-game-options">
-          <h2>New Game</h2>
-          <button class="new-game">Easy</button>
-          <button class="new-game">Medium</button>
-          <button class="new-game">Hard</button>
-          <br>
+        <div>
+          <button class="instructions" onmouseover="showInstructions()" onmouseout="hideInstructions()">Instructions</button>
         </div>
         <ul>
           Theme: 

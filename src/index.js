@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.target.classList.remove('off');
       e.target.classList.add('on');
       music.play();
-    } else {
+    } else if (e.target.classList.contains('on')) {
       e.target.classList.remove('on');
       e.target.classList.add('off');
       music.stop();

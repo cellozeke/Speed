@@ -3,7 +3,6 @@
   \*********************************************************************************************************************************************************/
 html {
   display: flex;
-  box-sizing: border-box;
   height: 100%;
   background-color: black;
   cursor: url("./cursor.png"), auto;
@@ -13,7 +12,6 @@ html {
 body {
   position: relative;
   display: flex;
-  box-sizing: border-box;
   width: 80%;
   height: 100%;
   margin: auto;
@@ -29,8 +27,7 @@ aside {
   position: relative;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  width: 20%;
+  width: 18%;
   height: 100%;
   border: 1px solid lime;
   box-shadow: 0 0 20px cyan;
@@ -42,7 +39,6 @@ aside {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  box-sizing: border-box;
   width: 100%;
   height: 70%;
   color: yellow;
@@ -55,8 +51,7 @@ aside {
 
 .board {
   position: relative;
-  box-sizing: border-box;
-  width: 75%;
+  width: 64%;
   height: 100%;
 }
 
@@ -65,7 +60,6 @@ aside {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-sizing: border-box;
   width: 100%;
   height: 40%;
   border: 1px solid lime;
@@ -76,7 +70,6 @@ aside {
   position: relative;
   display: flex;
   justify-content: space-evenly;
-  box-sizing: border-box;
   width: 100%;
   height: 30%;
   text-shadow: 1px 1px gray;
@@ -87,17 +80,15 @@ aside {
 .pile-area {
   position: relative;
   display: flex;
-  box-sizing: border-box;
   width: 100%;
   height: 30%;
   user-select: none;
   border: 1px solid lime;
-  box-shadow: 0 0 20px purple;
+  box-shadow: 0 0 20px gold;
 }
 
 .slot {
   position: relative;
-  box-sizing: border-box;
   height: 175px;
   width: 125px;
   margin: auto;
@@ -109,7 +100,6 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
   height: 100%;
   width: 100%;
   background-color: white;
@@ -210,14 +200,13 @@ button {
   color: yellow;
   font-family: "Merienda", cursive;
   font-size: 26px;
-  margin: 5px;
   text-shadow: 0 0 10px black;
   cursor: url("./cursor.png"), auto;
   transition: color 0.1s linear;
 }
 
-button.new-game:hover {
-  color: orange;
+button.new-game:hover, button.instructions:hover {
+  color: lime;
   text-shadow: 0 0 10px cyan;
   text-decoration: dotted underline;
 }
@@ -225,6 +214,7 @@ button.new-game:hover {
 .new-game-options {
   display: flex;
   flex-wrap: wrap;
+  margin: 10px;
   justify-content: center;
 }
 
@@ -239,6 +229,7 @@ h1 {
 
 h2 {
   font-size: 32px;
+  margin: 10px 0px;
   text-shadow: 0 0 10px black;
   text-decoration: underline;
 }
@@ -285,4 +276,26 @@ button.music.off {
 
 button.music:hover {
   text-shadow: 0 0 10px cyan;
+}
+
+.popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 64%;
+  height: 100%;
+  left: 18%;
+  z-index: 1;
+  visibility: hidden;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: purple;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid white;
+}
+
+.popup > div {
+  margin: 0 30px;
 }

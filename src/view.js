@@ -214,5 +214,5 @@ export default class View {
   };
 };
 
-View.DIFFICULTY_SPEEDS = {'Easy': 4000, 'Medium': 3000, 'Hard': 1000};
+View.DIFFICULTY_SPEEDS = {'Easy': 3000, 'Medium': 2000, 'Hard': 1000};
 View.CARD_ANIMATION_LENGTH = 200;
