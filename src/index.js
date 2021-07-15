@@ -15,7 +15,20 @@ document.addEventListener("DOMContentLoaded", () => {
     iterations: Infinity
   });
 
-  const sound = new Sound('./dist/flight_of_the_bumblebee_2.mp3');
-  window.addEventListener('keydown', () => sound.play());
-  // sound.play();
+  const music = new Sound('./dist/flight_of_the_bumblebee_2.mp3');
+  const musicEle = document.querySelector('button.music');
+  musicEle.classList.add('off');
+  window.addEventListener('click', toggleMusic);
+
+  function toggleMusic(e) {
+    if (e.target.classList.contains('off')) {
+      e.target.classList.remove('off');
+      e.target.classList.add('on');
+      music.play();
+    } else {
+      e.target.classList.remove('on');
+      e.target.classList.add('off');
+      music.stop();
+    };
+  };
 });

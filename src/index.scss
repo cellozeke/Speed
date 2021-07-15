@@ -210,10 +210,10 @@ button {
   margin: 5px;
   text-shadow: 0 0 10px black;
   cursor: url("./cursor.png"), auto;
-  transition: color 0.2s linear;
+  transition: color 0.1s linear;
 }
 
-button:hover{
+button.new-game:hover{
   color: orange;
   text-shadow: 0 0 10px cyan;
   text-decoration: dotted underline;
@@ -270,4 +270,18 @@ img:hover {
 
 img.github {
   border-radius: 100%;
+}
+
+button.music.on {
+  color: lime;
+}
+
+button.music.off {
+  color: red;
+  text-decoration: line-through;
+}
+
+button.music:hover{
+  text-shadow: 0 0 10px cyan;
+  // text-decoration: dotted underline;
 }
