@@ -44,10 +44,6 @@ export default class View {
     reserve2Slot.appendChild(reserve2);
   };
 
-  // getStackPositions() {
-  //   return [Utils.getPosition(document.querySelector('.stack-1-slot')), Utils.getPosition(document.querySelector('.stack-2-slot'))];
-  // };
-
   translateCard(ele1, ele2) {
     const first = Utils.getPosition(ele1);
     const second = Utils.getPosition(ele2);
@@ -125,7 +121,26 @@ export default class View {
     this.board.removeEventListener('click', this.handleClick);
     const hoverables = document.querySelectorAll('.hoverable');
     hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
-    alert(`Player ${winner} wins!`) ;
+    setTimeout(() => this.endMessage(winner), View.CARD_ANIMATION_LENGTH);
+  };
+
+  endMessage(winner) {
+    const body = document.querySelector('body');
+    const msg = document.createElement('div');
+    msg.classList.add('msg');
+    msg.innerHTML = (winner === 1 ? 'You win!' : 'AI wins!');
+    console.log(msg);
+    body.appendChild(msg);
+    msg.animate([
+      { textShadow: '0 0 10px lime', boxShadow: '0 0 50px orange' },
+      { textShadow: '0 0 10px red', boxShadow: '0 0 50px lime' },
+      { textShadow: '0 0 10px cyan', boxShadow: '0 0 50px red' },
+      { textShadow: '0 0 10px orange', boxShadow: '0 0 50px cyan' },
+      { textShadow: '0 0 10px lime', boxShadow: '0 0 50px orange' }
+    ], {
+      duration: 2000,
+      iterations: Infinity
+    });
   };
 
   AIturn() {

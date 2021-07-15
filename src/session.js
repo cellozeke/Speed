@@ -15,7 +15,8 @@ export default class Session {
     const cards = document.querySelectorAll('.card');
     const piles = document.querySelectorAll('.pile');
     const reserves = document.querySelectorAll('.reserve');
-    [...cards, ...piles, ...reserves].forEach(ele => {if (ele) ele.remove()});
+    const msg = document.querySelector('.msg');
+    [...cards, ...piles, ...reserves, msg].forEach(ele => {if (ele) ele.remove()});
     this.game ? this.game.restart() : this.game = new Game();
     this.view ? this.view.restart(diff) : this.view = new View(this.game, this.board, diff);
   };
