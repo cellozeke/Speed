@@ -2,7 +2,7 @@ html {
   display: flex;
   height: 100%;
   background-color: black;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./js.png"), auto;
   user-select: none;
 }
 
@@ -12,10 +12,11 @@ body {
   width: 80%;
   height: 100%;
   margin: auto;
-  font-family: 'Merienda', cursive;
+  letter-spacing: -3px;
+  font-family: 'Source Code Pro', monospace;
   box-shadow: 0px 0px 30px lime;
-  background-image: url('lightning_bg.jpg');
-  background-size: 100%;
+  background-image: url('./this_is_fine.jpg');
+  background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -107,19 +108,18 @@ aside {
 }
 
 .pile, .reserve, .hand-2 .card {
-  background-image: url('./lightning.jpg');
-  background-position-x: -220px;
-  background-position-y: -10px;
-  background-size: 300%;
+  background-image: url('./mike.png');
+  background-position: center;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
 .pile, .reserve {
-  font-family: 'Merienda', cursive;
-  color: lime;
+  font-family: 'Source Code Pro', monospace;
+  color: darkorange;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 10px lime;
+  text-shadow: 0 0 10px darkorange;
   border-color: orange;
   border-right-width: 5px;
   border-bottom-width: 5px;
@@ -195,10 +195,11 @@ button {
   border: transparent;
   border-radius: 5%;
   color: yellow;
-  font-family: 'Merienda', cursive;
-  font-size: 26px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 32px;
+  letter-spacing: -3px;
   text-shadow: 0 0 10px black;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./js.png"), auto;
   transition: color 0.1s linear;
 }
 
@@ -211,21 +212,23 @@ button.new-game:hover, button.instructions:hover {
 .new-game-options {
   display: flex;
   flex-wrap: wrap;
+  font-size: 40px;
   margin: 10px;
   justify-content: center;
 }
 
 h1 {
-  -webkit-text-stroke-width: 0.1px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   position: relative;
   top: 15px;
-  font-size: 50px;
+  font-size: 68px;
   font-weight: bold;
+  /* text-shadow: 0 0 10px black; */
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 40px;
   margin: 10px 0px;
   text-shadow: 0 0 10px black;
   text-decoration: underline;
@@ -240,7 +243,7 @@ h2 {
   color: orange;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: linear-gradient(to right, rgba(0, 255, 170, 0.8), rgb(0, 0, 0), rgba(0, 255, 170, 0.8));
+  background-image: linear-gradient(to right, rgba(255, 60, 0, 0.8), rgb(0, 0, 0), rgba(255, 60, 0, 0.8));
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   text-shadow: 0 0 10px black;
@@ -250,12 +253,12 @@ h2 {
 a {
   margin: 10px;
   height: 64px;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./js.png"), auto;
 }
 
 img:hover {
   box-shadow: 0 0 30px cyan;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./js.png"), auto;
 }
 
 img.github {
@@ -288,8 +291,8 @@ button.music:hover{
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-  color: purple;
-  background-color: rgba(0, 0, 0, 0.2);
+  color: darkorange;
+  background-color: rgba(0, 0, 0, 0.85);
   border: 1px solid white;
 }
 
