@@ -117,12 +117,12 @@ export default class View {
   endGame(winner) {
     if (winner === false) return;
     clearInterval(this.timer);
+    const hoverables = document.querySelectorAll('.hoverable');
+    hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
     window.removeEventListener('keydown', this.handleKey);
     this.board.removeEventListener('click', this.handleClick);
-    const hoverables = document.querySelectorAll('.hoverable');
-    console.log(hoverables);
-    hoverables.forEach(hoverable => {hoverable.classList.remove('hoverable')});
-    console.log(hoverables);
+    // console.log(hoverables.length, 'before');
+    // console.log(hoverables.length, 'after');
     setTimeout(() => this.endMessage(winner), View.CARD_ANIMATION_LENGTH);
   };
 

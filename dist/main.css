@@ -236,7 +236,7 @@ h2 {
 
 .msg {
   position: absolute;
-  width: 65.5%;
+  width: 64%;
   top: 50%;
   left: 50%;
   font-size: 100px;
@@ -286,7 +286,7 @@ button.music:hover {
   width: 64%;
   height: 100%;
   left: 18%;
-  z-index: 1;
+  z-index: 2;
   visibility: hidden;
   font-size: 20px;
   font-weight: bold;
