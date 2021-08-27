@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function chooseTheme(e) {
     if (e.target.classList.contains('theme')) {
-      const oldCss = document.querySelectorAll('head > link')[1];
+      const oldCss = document.querySelectorAll('head > link')[2];
       oldCss.remove();
       const head = document.querySelector('head');
       const newCss = document.createElement('link');
       newCss.setAttribute('rel', 'stylesheet');
-      newCss.setAttribute('href', e.target.innerHTML === 'Lightning' ? './dist/main.css' : './dist/fire.css');
+      newCss.setAttribute('href', e.target.innerHTML === 'Lightning' ? './dist/main.css' : './dist/meme.css');
       head.appendChild(newCss);
     };
   };

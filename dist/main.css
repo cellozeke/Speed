@@ -5,7 +5,7 @@ html {
   display: flex;
   height: 100%;
   background-color: black;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./images/lightning/lightning_cursor.png"), auto;
   user-select: none;
 }
 
@@ -17,7 +17,7 @@ body {
   margin: auto;
   font-family: "Merienda", cursive;
   box-shadow: 0px 0px 30px lime;
-  background-image: url("lightning_bg.jpg");
+  background-image: url("./images/lightning/lightning_bg.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -110,7 +110,7 @@ aside {
 }
 
 .pile, .reserve, .hand-2 .card {
-  background-image: url("./lightning.jpg");
+  background-image: url("./images/lightning/lightning.jpg");
   background-position-x: -220px;
   background-position-y: -10px;
   background-size: 300%;
@@ -215,7 +215,7 @@ button {
   font-family: "Merienda", cursive;
   font-size: 26px;
   text-shadow: 0 0 10px black;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./images/lightning/lightning_cursor.png"), auto;
   transition: color 0.1s linear;
 }
 
@@ -267,12 +267,12 @@ h3 {
 a {
   margin: 10px;
   height: 64px;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./images/lightning/lightning_cursor.png"), auto;
 }
 
 img:hover {
   box-shadow: 0 0 30px cyan;
-  cursor: url("./cursor.png"), auto;
+  cursor: url("./images/lightning/lightning_cursor.png"), auto;
 }
 
 img.github {

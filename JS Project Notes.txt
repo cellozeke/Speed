@@ -1,3 +1,0 @@
-make deck
-values wrap around (K A 2)
-players, hands, piles, stacks, reserves

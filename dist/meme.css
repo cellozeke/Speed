@@ -2,7 +2,7 @@ html {
   display: flex;
   height: 100%;
   background-color: black;
-  cursor: url("./js.png"), auto;
+  cursor: url("./images/meme/js_cursor.png"), auto;
   user-select: none;
 }
 
@@ -15,7 +15,7 @@ body {
   letter-spacing: -3px;
   font-family: 'Source Code Pro', monospace;
   box-shadow: 0px 0px 30px lime;
-  background-image: url('./this_is_fine.jpg');
+  background-image: url('./images/meme/this_is_fine.jpg');
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,7 +108,7 @@ aside {
 }
 
 .pile, .reserve, .hand-2 .card {
-  background-image: url('./mike.png');
+  background-image: url('./images/meme/mike.png');
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -215,7 +215,7 @@ button {
   font-size: 32px;
   letter-spacing: -3px;
   text-shadow: 0 0 10px white;
-  cursor: url("./js.png"), auto;
+  cursor: url("./images/meme/js_cursor.png"), auto;
   transition: color 0.1s linear;
 }
 
@@ -268,12 +268,12 @@ h3 {
 a {
   margin: 10px;
   height: 64px;
-  cursor: url("./js.png"), auto;
+  cursor: url("./images/meme/js_cursor.png"), auto;
 }
 
 img:hover {
   box-shadow: 0 0 30px cyan;
-  cursor: url("./js.png"), auto;
+  cursor: url("./images/meme/js_cursor.png"), auto;
 }
 
 img.github {
