@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const head = document.querySelector('head');
       const newCss = document.createElement('link');
       newCss.setAttribute('rel', 'stylesheet');
-      newCss.setAttribute('href', e.target.innerHTML === 'Lightning' ? './dist/main.css' : './dist/meme.css');
+      newCss.setAttribute('href', e.target.innerHTML === 'Lightning' ? './dist/main.css' : './dist/fire.css');
       head.appendChild(newCss);
     };
   };
