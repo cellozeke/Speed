@@ -3,20 +3,20 @@
   \*********************************************************************************************************************************************************/
 html {
   display: flex;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  font-size: 1%;
   background-color: black;
   cursor: url("./images/lightning/lightning_cursor.png"), auto;
   user-select: none;
 }
 
 body {
-  position: relative;
   display: flex;
-  width: 80%;
-  height: 100%;
+  width: 80vw;
+  height: 100vh;
   margin: auto;
   font-family: "Merienda", cursive;
-  box-shadow: 0px 0px 30px lime;
   background-image: url("./images/lightning/lightning_bg.jpg");
   background-size: 100%;
   background-position: center;
@@ -24,17 +24,15 @@ body {
 }
 
 aside {
-  position: relative;
   display: flex;
   flex-direction: column;
   width: 18%;
   height: 100%;
   border: 1px solid lime;
-  box-shadow: 0 0 20px cyan;
+  box-shadow: 0 0 100rem cyan;
 }
 
 .nav {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,49 +40,47 @@ aside {
   width: 100%;
   height: 70%;
   color: yellow;
-  padding: 10px;
-  font-size: 24px;
-  text-shadow: 0 0 10px black;
+  padding: 50em;
+  text-shadow: 0 0 100rem black;
   border: 1px solid lime;
-  box-shadow: 0 0 20px cyan;
+  box-shadow: 0 0 100rem cyan;
 }
 
 .board {
-  position: relative;
   width: 64%;
   height: 100%;
+  border-top: 1px solid lime;
+  border-bottom: 1px solid lime;
 }
 
 .play-area {
-  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   height: 40%;
+  text-shadow: 5em 5em gray;
   border: 1px solid lime;
-  box-shadow: 0 0 20px orange;
+  box-shadow: 0 0 100rem orange;
 }
 
 .hand {
-  position: relative;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
   height: 30%;
-  text-shadow: 1px 1px gray;
+  text-shadow: 5em 5em gray;
   border: 1px solid lime;
-  box-shadow: 0 0 20px yellow;
+  box-shadow: 0 0 100rem yellow;
 }
 
 .pile-area {
-  position: relative;
   display: flex;
   width: 100%;
   height: 30%;
   user-select: none;
   border: 1px solid lime;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 100rem gold;
 }
 
 .slot {
@@ -96,7 +92,6 @@ aside {
 }
 
 .card, .stack, .pile, .reserve {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,7 +178,6 @@ aside {
 
 .hand-1 div.selected {
   outline: none;
-  position: relative;
   bottom: 15px;
   box-shadow: 0px 0px 50px cyan;
 }
@@ -228,7 +222,6 @@ button.new-game:hover, button.instructions:hover, button.theme:hover {
 h1 {
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
-  position: relative;
   top: 15px;
   font-size: 50px;
   font-weight: bold;
