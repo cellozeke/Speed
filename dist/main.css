@@ -111,8 +111,8 @@ aside {
 
 .pile, .reserve, .hand-2 .card {
   background-image: url("./images/lightning/lightning.jpg");
-  background-position-x: -220px;
-  background-position-y: -10px;
+  /* background-position-x: -220px;
+  background-position-y: -10px; */
   background-size: 300%;
   background-repeat: no-repeat;
 }
@@ -201,9 +201,13 @@ aside {
 .new-game-options, .theme-options {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 15% 0;
   justify-content: center;
   align-items: center;
+}
+
+.theme-options {
+  margin: 0;
 }
 
 button {
@@ -212,36 +216,29 @@ button {
   border-radius: 5%;
   color: yellow;
   font-family: "Merienda", cursive;
-  font-size: 26px;
-  text-shadow: 0 0 10px black;
+  font-size: 1.8vw;
+  text-shadow: 0 0 100rem black;
   cursor: url("./images/lightning/lightning_cursor.png"), auto;
   transition: color 0.1s linear;
 }
 
 button.new-game:hover, button.instructions:hover, button.theme:hover {
   color: lime;
-  text-shadow: 0 0 10px cyan;
+  text-shadow: 0 0 100rem cyan;
   text-decoration: dotted underline;
 }
 
 h1 {
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
-  top: 15px;
-  font-size: 50px;
+  margin-top: 15%;
+  font-size: 3.75vw;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 32px;
-  margin: 10px 0px;
-  text-shadow: 0 0 10px black;
-  text-decoration: underline;
-}
-
-h3 {
-  font-size: 30px;
-  margin: 10px 0px;
+  font-size: 2.1vw;
+  margin: 100rem 0;
   text-shadow: 0 0 10px black;
   text-decoration: underline;
 }
@@ -251,25 +248,37 @@ h3 {
   width: 64%;
   top: 50%;
   left: 50%;
-  font-size: 100px;
+  font-size: 8vw;
   color: orange;
   transform: translate(-50%, -50%);
   text-align: center;
   background-image: linear-gradient(to right, rgba(0, 255, 170, 0.8), black, rgba(0, 255, 170, 0.8));
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 10px black;
+  text-shadow: 0 0 100rem black;
   border-radius: 1%;
 }
 
+.links {
+  display: flex;
+  justify-content: center;
+  height: 6vw;
+}
+
 a {
-  margin: 10px;
-  height: 64px;
+  margin: 0.75vw;
+  width: fit-content;
   cursor: url("./images/lightning/lightning_cursor.png"), auto;
+  display: flex;
+}
+
+.github, .linkedin {
+  height: 80%;
+  width: auto;
 }
 
 img:hover {
-  box-shadow: 0 0 30px cyan;
+  box-shadow: 0 0 300rem cyan;
   cursor: url("./images/lightning/lightning_cursor.png"), auto;
 }
 
@@ -287,7 +296,7 @@ button.music.off {
 }
 
 button.music:hover {
-  text-shadow: 0 0 10px cyan;
+  text-shadow: 0 0 100rem cyan;
 }
 
 .popup {
@@ -300,7 +309,7 @@ button.music:hover {
   left: 18%;
   z-index: 2;
   visibility: hidden;
-  font-size: 20px;
+  font-size: 1vw;
   font-weight: bold;
   text-align: center;
   color: purple;
@@ -309,5 +318,5 @@ button.music:hover {
 }
 
 .popup > div {
-  margin: 0 30px;
+  margin: 0 1vw;
 }
