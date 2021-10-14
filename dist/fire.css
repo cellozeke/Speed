@@ -10,7 +10,7 @@ html {
   min-width: 960px;
   font-size: 1%;
   background-color: black;
-  cursor: url("./images/lightning/lightning_cursor.png"), auto;
+  cursor: url("./images/fire/blue_fire_cursor.png"), auto;
   user-select: none;
 }
 
@@ -20,8 +20,8 @@ body {
   height: 100%;
   margin: auto;
   /* font-size: 1%; */
-  font-family: "Merienda", cursive;
-  background-image: url("./images/lightning/lightning_bg.jpg");
+  font-family: 'Dancing Script', cursive;
+  background-image: url('./images/fire/fire_bg.jpg');
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -43,9 +43,9 @@ aside {
   justify-content: space-evenly;
   width: 100%;
   height: 67%;
-  color: yellow;
+  color: rgb(153, 0, 255);
   padding: 50em;
-  text-shadow: 0 0 100rem black;
+  text-shadow: 0 0 100rem white;
   border: 1px solid lime;
   box-shadow: 0 0 100rem cyan;
 }
@@ -126,20 +126,21 @@ aside {
 }
 
 .pile, .reserve, .hand-2 .card {
-  background-image: url("./images/lightning/lightning.jpg");
+  background-image: url('./images/fire/flame.jpg');
   /* background-position-x: -220px;
   background-position-y: -10px; */
-  background-size: 300%;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
 .pile, .reserve {
-  font-family: "Merienda", cursive;
-  color: lime;
+  font-family: 'Dancing Script', cursive;
+  color: rgb(0, 140, 255);
   -webkit-text-stroke-width: 10rem;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 50rem lime;
-  border-color: orange;
+  text-shadow: 0 0 50rem darkorange;
+  letter-spacing: 3px;
+  border-color: rgb(0, 140, 255);
   border-right-width: 25rem;
   border-bottom-width: 25rem;
   box-sizing: initial;
@@ -279,11 +280,11 @@ button {
   background-color: transparent;
   border: transparent;
   border-radius: 5%;
-  color: yellow;
-  font-family: "Merienda", cursive;
+  color: rgb(0, 140, 255);
+  font-family: 'Dancing Script', cursive;
   font-size: 1.8vw;
   text-shadow: 0 0 100rem black;
-  cursor: url("./images/lightning/lightning_cursor.png"), auto;
+  cursor: url("./images/fire/blue_fire_cursor.png"), auto;
   transition: color 0.1s linear;
 }
 
@@ -317,7 +318,7 @@ h2 {
   color: orange;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: linear-gradient(to right, rgba(0, 255, 170, 0.8), black, rgba(0, 255, 170, 0.8));
+  background-image: linear-gradient(to right, rgba(255, 60, 0, 0.8), rgb(0, 0, 0), rgba(255, 60, 0, 0.8));
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
   text-shadow: 0 0 100rem black;
@@ -333,7 +334,7 @@ h2 {
 a {
   margin: 0.75vw;
   width: fit-content;
-  cursor: url("./images/lightning/lightning_cursor.png"), auto;
+  cursor: url("./images/fire/blue_fire_cursor.png"), auto;
   display: flex;
 }
 
@@ -344,7 +345,7 @@ a {
 
 img:hover {
   box-shadow: 0 0 300rem cyan;
-  cursor: url("./images/lightning/lightning_cursor.png"), auto;
+  cursor: url("./images/fire/blue_fire_cursor.png"), auto;
 }
 
 img.github {
@@ -377,7 +378,7 @@ button.music:hover {
   font-size: 1vw;
   font-weight: bold;
   text-align: center;
-  color: purple;
+  color: rgb(0, 140, 255);
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid white;
 }
