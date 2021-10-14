@@ -277,11 +277,13 @@ aside {
   margin: 0;
 }
 
-button {
+button, .new-game, .theme, .music {
   background-color: transparent;
   border: transparent;
   border-radius: 5%;
   color: rgb(0, 140, 255);
+  margin: 0.5vw 0;
+  outline: none;
   font-family: 'Dancing Script', cursive;
   font-size: 1.8vw;
   text-shadow: 0 0 100rem black;
@@ -289,7 +291,7 @@ button {
   transition: color 0.1s linear;
 }
 
-button.new-game:hover, button.instructions:hover, button.theme:hover {
+.new-game:hover, .instructions:hover, .theme:hover {
   color: lime;
   text-shadow: 0 0 100rem cyan;
   text-decoration: dotted underline;
@@ -353,16 +355,16 @@ img.github {
   border-radius: 100%;
 }
 
-button.music.on {
+.music.on {
   color: lime;
 }
 
-button.music.off {
+.music.off {
   color: red;
   text-decoration: line-through;
 }
 
-button.music:hover {
+.music:hover {
   text-shadow: 0 0 100rem cyan;
 }
 
