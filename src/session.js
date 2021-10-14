@@ -24,6 +24,7 @@ export default class Session {
     if (e.target.classList.contains('new-game')) {
       const diff = e.target.innerHTML
       this.restart(diff);
+      document.activeElement.blur(); //why is this not working
     };
   };
 };

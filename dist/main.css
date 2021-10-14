@@ -78,8 +78,18 @@ aside {
   box-shadow: 0 0 100rem yellow;
 }
 
+.hand-1 {
+  align-items: flex-end;
+  padding-bottom: 0.5vw;
+}
+
+.hand-2 {
+  align-items: center;
+}
+
 .pile-area {
   display: flex;
+  justify-content: center;
   width: 100%;
   height: 33%;
   user-select: none;
@@ -87,12 +97,19 @@ aside {
   box-shadow: 0 0 100rem gold;
 }
 
+.pile-1-area {
+  align-items: flex-end;
+  padding-bottom: 0.5vw;
+}
+
+.pile-2-area {
+  align-items: center;
+}
+
 .slot {
   position: relative;
   height: 10.8vw;
-  /* min-height: 72%; */
   width: 8.1vw;
-  margin: auto;
   display: flex;
 }
 
@@ -104,7 +121,6 @@ aside {
   width: 100%;
   background-color: white;
   border: 1px solid lime;
-  /* box-shadow: 0 0 100rem lime; */
   border-radius: 10%;
   font-size: 5vw;
 }
@@ -173,6 +189,55 @@ aside {
 .hand-2 .card::after {
   font-size: 0;
 }
+
+.reserve-1-slot::after, .pile-1-slot::after, .hand-1 > .slot::after {
+  position: absolute;
+  display: flex;
+  font-size: 2vw;
+  font-weight: bold;
+  top: -2.5vw;
+  text-shadow: 0 0 20rem white;
+  justify-content: center;
+  width: 100%;
+  /* content : url(./images/instructions/q.png); */
+}
+
+.reserve-1-slot::after {
+  content: 'F';
+  /* color: white; */
+}
+.slot-1::after {
+  content: 'Q';
+}
+.slot-2::after {
+  content: 'W';
+}
+.slot-3::after {
+  content: 'E';
+}
+.slot-4::after {
+  content: 'R';
+}
+.slot-5::after {
+  content: 'T';
+}
+
+.pile-1-slot::after {
+  content: 'spacebar';
+  /* color: white; */
+}
+
+/* .pile-1-slot::after {
+  background-image: url(./images/instructions/spacebar.png);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  content: '';
+} */
+/* content : url(./images/instructions/spacebar.png); */
 
 .red {
   color: red;
