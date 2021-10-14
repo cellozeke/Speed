@@ -60,7 +60,8 @@ aside {
 .play-area {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 0.5vw;
   width: 100%;
   height: 34%;
   text-shadow: 5em 5em gray;
