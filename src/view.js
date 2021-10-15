@@ -51,7 +51,6 @@ export default class View {
     const y = second[1] - first[1];
     ele1.animate([
       { transform: `translate(${x}px, ${y}px)`}
-      // { transform: `translate(${translation[0]}px, ${translation[1]}px) rotate(360deg)`}
     ], {
       duration: View.CARD_ANIMATION_LENGTH,
       fill: 'forwards',
